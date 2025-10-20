@@ -1,0 +1,12 @@
+name = "landing"
+main = "worker/index.js"
+compatibility_date = "2025-10-20"
+
+# Uncomment and fill if using KV for analytics
+#[[kv_namespaces]]
+#binding = "VISITS"
+#id = "your-kv-namespace-id"
+
+# Example route config
+#[[routes]]
+#pattern = "example.com/*"

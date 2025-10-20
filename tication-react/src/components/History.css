@@ -1,0 +1,50 @@
+.history {
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.history h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--text-secondary);
+}
+
+.history-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.history-btn {
+  padding: 8px 16px;
+  font-size: 0.875rem;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.history-btn:hover:not(:disabled) {
+  background: var(--bg-hover);
+  border-color: var(--accent-o);
+}
+
+.history-btn.active {
+  background: var(--accent-o);
+  color: white;
+  border-color: var(--accent-o);
+  cursor: default;
+}
+
+.history-btn:focus {
+  outline: 2px solid var(--accent-o);
+  outline-offset: 2px;
+}
+
+.history-btn:disabled {
+  opacity: 1;
+}

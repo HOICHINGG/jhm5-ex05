@@ -1,0 +1,13 @@
+name = "todo-api"
+main = "worker/index.js"
+compatibility_date = "2025-10-20"
+
+# KV namespace binding
+[[kv_namespaces]]
+binding = "TODOS"
+id = "your-kv-namespace-id"
+# Create KV namespace: wrangler kv:namespace create "TODOS"
+
+# Routes (adjust to your domain)
+# [[routes]]
+# pattern = "example.com/api/*"

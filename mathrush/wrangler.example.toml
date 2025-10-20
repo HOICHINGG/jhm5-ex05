@@ -1,0 +1,12 @@
+name = "mathrush-api"
+main = "worker/index.js"
+compatibility_date = "2025-10-20"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "mathrush"
+database_id = "your-database-id"
+
+# Create D1 database:
+# wrangler d1 create mathrush
+# wrangler d1 execute mathrush --file=./schema.sql

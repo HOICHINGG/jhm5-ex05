@@ -1,0 +1,63 @@
+.add-todo {
+  display: flex;
+  gap: 12px;
+  background: var(--bg-secondary);
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.add-todo-input {
+  flex: 1;
+  padding: 12px;
+  background: var(--bg-primary);
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+
+.add-todo-input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.add-todo-priority {
+  padding: 12px;
+  background: var(--bg-primary);
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.add-todo-priority:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.add-todo-btn {
+  padding: 12px 24px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.add-todo-btn:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 480px) {
+  .add-todo {
+    flex-wrap: wrap;
+  }
+
+  .add-todo-input {
+    flex: 1 1 100%;
+  }
+}

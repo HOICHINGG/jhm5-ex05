@@ -1,0 +1,158 @@
+.leaderboard-screen {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.leaderboard-card {
+  background: var(--bg-secondary);
+  padding: 32px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.leaderboard-card h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin: 0;
+}
+
+.difficulty-selector {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.difficulty-selector button {
+  padding: 10px 20px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 600;
+}
+
+.difficulty-selector button:hover {
+  background: var(--bg-hover);
+  border-color: var(--accent);
+}
+
+.difficulty-selector button.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}
+
+.error-msg {
+  padding: 12px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid var(--danger);
+  color: var(--danger);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.loading, .empty {
+  text-align: center;
+  padding: 32px;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+.leaderboard-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.leaderboard-entry {
+  display: grid;
+  grid-template-columns: 60px 1fr 80px 60px;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: var(--bg-primary);
+  border-radius: 8px;
+  border: 2px solid var(--border);
+  transition: all 0.2s ease;
+}
+
+.leaderboard-entry:hover {
+  border-color: var(--accent);
+  transform: translateX(4px);
+}
+
+.leaderboard-entry.rank-1 {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), var(--bg-primary));
+  border-color: var(--accent);
+}
+
+.rank {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.player-name {
+  font-weight: 600;
+  color: var(--text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.score {
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 1.25rem;
+  text-align: right;
+}
+
+.accuracy {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  text-align: right;
+}
+
+.btn {
+  padding: 14px 24px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 8px;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 480px) {
+  .leaderboard-entry {
+    grid-template-columns: 50px 1fr 70px 50px;
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .rank {
+    font-size: 1.25rem;
+  }
+
+  .score {
+    font-size: 1.1rem;
+  }
+}
