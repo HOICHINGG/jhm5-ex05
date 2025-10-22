@@ -16,10 +16,7 @@
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 8px;
-  background: linear-gradient(135deg, var(--accent), var(--success));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--accent);
 }
 
 .subtitle {
@@ -35,7 +32,7 @@
 }
 
 .error-banner {
-  background: rgba(239, 68, 68, 0.1);
+  background: rgba(255, 182, 193, 0.3);
   border: 1px solid var(--danger);
   color: var(--danger);
   padding: 12px 16px;

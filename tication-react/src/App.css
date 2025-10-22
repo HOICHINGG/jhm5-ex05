@@ -16,10 +16,7 @@
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 8px;
-  background: linear-gradient(135deg, var(--accent-x), var(--accent-o));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--accent-x);
 }
 
 .subtitle {
@@ -42,7 +39,7 @@
 }
 
 .app-footer a:hover {
-  color: #2563eb;
+  color: #ff1493;
 }
 
 @media (max-width: 480px) {

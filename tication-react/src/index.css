@@ -1,13 +1,13 @@
 :root {
-  --bg-primary: #0f172a;
-  --bg-secondary: #1e293b;
-  --bg-hover: #334155;
-  --accent-x: #ef4444;
-  --accent-o: #3b82f6;
-  --accent-win: #22c55e;
-  --text-primary: #f1f5f9;
-  --text-secondary: #94a3b8;
-  --border: #334155;
+  --bg-primary: #ffc0cb;
+  --bg-secondary: #ffb3c1;
+  --bg-hover: #ff9aaf;
+  --accent-x: #ff1493;
+  --accent-o: #ff69b4;
+  --accent-win: #ff1493;
+  --text-primary: #4a0e4e;
+  --text-secondary: #8b4789;
+  --border: #ffb3c1;
 }
 
 * {
@@ -18,7 +18,7 @@
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  background: #ffc0cb;
   color: var(--text-primary);
   min-height: 100vh;
 }

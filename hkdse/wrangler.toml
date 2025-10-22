@@ -1,0 +1,13 @@
+name = "hkdse-api"
+main = "worker/index.js"
+compatibility_date = "2025-10-20"
+
+# D1 database binding
+[[d1_databases]]
+binding = "DB"
+database_name = "hkdse"
+database_id = "39e9a08a-252c-49f4-bda0-6c6489f8de78"
+
+# Create D1 database:
+# wrangler d1 create hkdse
+# Then update database_id above

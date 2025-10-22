@@ -51,7 +51,7 @@
 
 .error-msg {
   padding: 12px;
-  background: rgba(239, 68, 68, 0.1);
+  background: rgba(255, 182, 193, 0.3);
   border: 1px solid var(--danger);
   color: var(--danger);
   border-radius: 8px;
@@ -89,7 +89,7 @@
 }
 
 .leaderboard-entry.rank-1 {
-  background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), var(--bg-primary));
+  background: rgba(255, 182, 193, 0.5);
   border-color: var(--accent);
 }
 

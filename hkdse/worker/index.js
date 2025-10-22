@@ -1,14 +1,16 @@
-addEventListener('fetch', event => {
-  event.respondWith(handleRequest(event.request))
-})
-
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Methods': 'GET, OPTIONS',
   'Access-Control-Allow-Headers': 'Content-Type',
 }
 
-async function handleRequest(request) {
+export default {
+  async fetch(request, env, ctx) {
+    return handleRequest(request, env)
+  }
+}
+
+async function handleRequest(request, env) {
   const url = new URL(request.url)
 
   if (request.method === 'OPTIONS') {
@@ -16,7 +18,7 @@ async function handleRequest(request) {
   }
 
   if (url.pathname.startsWith('/api/')) {
-    return handleAPI(request, url)
+    return handleAPI(request, url, env)
   }
 
   return new Response('HKDSE API Server', {
@@ -24,23 +26,23 @@ async function handleRequest(request) {
   })
 }
 
-async function handleAPI(request, url) {
+async function handleAPI(request, url, env) {
   const path = url.pathname
 
   try {
     // GET /api/stats - Get statistics summary
     if (path === '/api/stats') {
-      return await getStats(url)
+      return await getStats(url, env)
     }
 
     // GET /api/rows - Get filtered rows
     if (path === '/api/rows') {
-      return await getRows(url)
+      return await getRows(url, env)
     }
 
     // GET /api/descriptions - Get unique descriptions
     if (path === '/api/descriptions') {
-      return await getDescriptions()
+      return await getDescriptions(env)
     }
 
     return jsonResponse({ error: 'Not found' }, 404)
@@ -50,7 +52,7 @@ async function handleAPI(request, url) {
   }
 }
 
-async function getStats(url) {
+async function getStats(url, env) {
   const type = url.searchParams.get('type') || 'Number'
   const description = url.searchParams.get('description')
 
@@ -64,12 +66,12 @@ async function getStats(url) {
 
   query += ` ORDER BY row_number ASC`
 
-  const { results } = await DB.prepare(query).bind(...params).all()
+  const { results } = await env.DB.prepare(query).bind(...params).all()
 
   return jsonResponse(results)
 }
 
-async function getRows(url) {
+async function getRows(url, env) {
   const limit = parseInt(url.searchParams.get('limit')) || 100
   const offset = parseInt(url.searchParams.get('offset')) || 0
   const type = url.searchParams.get('type')
@@ -85,14 +87,14 @@ async function getRows(url) {
   query += ` ORDER BY row_number ASC LIMIT ? OFFSET ?`
   params.push(limit, offset)
 
-  const { results } = await DB.prepare(query).bind(...params).all()
+  const { results } = await env.DB.prepare(query).bind(...params).all()
 
   return jsonResponse(results)
 }
 
-async function getDescriptions() {
+async function getDescriptions(env) {
   const query = `SELECT DISTINCT description FROM results WHERE type = 'Number' ORDER BY description`
-  const { results } = await DB.prepare(query).all()
+  const { results } = await env.DB.prepare(query).all()
 
   return jsonResponse(results.map(r => r.description))
 }
